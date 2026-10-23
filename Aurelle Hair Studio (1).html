@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aurelle Hair Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7eff2;--surface:#fff;--ink:#2b1428;--muted:#6f5a6b;--plum:#3a1634;--rose:#e9c3d2;--brass:#a97a3a;--line:#e3d0d8;--on-plum:#f7eff2;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c0f1a;--surface:#2a1727;--ink:#f6e9ef;--muted:#c3a9b7;--plum:#e9c3d2;--rose:#4a2443;--brass:#d6a65c;--line:#4a2f45;--on-plum:#2b1428}}
+:root[data-theme="dark"]{--bg:#1c0f1a;--surface:#2a1727;--ink:#f6e9ef;--muted:#c3a9b7;--plum:#e9c3d2;--rose:#4a2443;--brass:#d6a65c;--line:#4a2f45;--on-plum:#2b1428}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bodoni Moda",Georgia,serif;font-weight:500;line-height:1.05;margin:0;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-family:"Bodoni Moda",serif;font-size:24px;text-decoration:none;font-style:italic}
+nav{display:flex;gap:22px;align-items:center;font-size:15px}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--plum);color:var(--on-plum);padding:13px 24px;border-radius:999px;font:500 16px "DM Sans",sans-serif;text-decoration:none}
+.btn:hover{filter:brightness(1.15)}
+nav .btn{padding:9px 18px;font-size:14px;color:var(--on-plum)}
+@media(max-width:700px){nav a:not(.btn){display:none}}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:64px 0 72px}
+.hero h1{font-size:clamp(44px,7.4vw,92px)}
+.hero h1 em{display:block;color:var(--brass)}
+.hero p{max-width:44ch;color:var(--muted);font-size:19px;margin:22px 0 28px}
+.hero .row{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.hero .row a.t{color:var(--muted)}
+.art{position:relative;aspect-ratio:3/4;max-width:420px;justify-self:end;width:100%}
+.arch{position:absolute;border-radius:999px 999px 0 0;animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}
+.a1{inset:0 22% 0 0;background:linear-gradient(170deg,#c98fa6,#5b2a52 70%)}
+.a2{inset:14% 0 0 40%;background:linear-gradient(190deg,var(--brass),#7a3f5e 80%);animation-delay:.18s}
+.a3{inset:46% 52% 0 8%;background:var(--rose);border:2px solid var(--plum);animation-delay:.34s}
+@keyframes rise{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0)}}
+.badge{position:absolute;left:-14px;bottom:26px;background:var(--surface);border:1px solid var(--line);padding:12px 16px;border-radius:14px;font-size:14px;box-shadow:0 10px 30px rgba(58,22,52,.18)}
+.badge b{display:block;font-size:20px;font-family:"Bodoni Moda",serif;font-weight:500}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:36px}.art{justify-self:start;max-width:300px}}
+section{padding:72px 0}
+.band{background:var(--plum);color:var(--on-plum)}
+.band .muted{color:inherit;opacity:.78}
+h2{font-size:clamp(34px,5vw,56px);margin-bottom:12px}
+.muted{color:var(--muted)}
+.menu{margin-top:34px;display:grid;gap:0;border-top:1px solid var(--line)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.tab{border:1px solid var(--line);background:transparent;color:var(--ink);padding:9px 18px;border-radius:999px;font:500 15px "DM Sans",sans-serif;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--plum);color:var(--on-plum);border-color:var(--plum)}
+.item{display:grid;grid-template-columns:1fr auto;gap:4px 20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.item h3{font-size:25px}.item .p{font-family:"Bodoni Moda",serif;font-size:25px}
+.item span{color:var(--muted);font-size:15px}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+.pro{display:grid;gap:12px}
+.pic{aspect-ratio:4/5;border-radius:200px 200px 14px 14px;display:grid;place-items:end center;padding-bottom:18px;font:500 56px "Bodoni Moda",serif;color:#fff}
+.pro h3{font-size:26px}
+.pro p{margin:0;color:var(--muted);font-size:15px}
+@media(max-width:700px){.team{grid-template-columns:1fr}.pic{aspect-ratio:16/9;border-radius:14px}}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:34px}
+blockquote{margin:0;font-family:"Bodoni Moda",serif;font-size:23px;line-height:1.3}
+cite{display:block;margin-top:12px;font:400 14px "DM Sans",sans-serif;opacity:.78}
+@media(max-width:800px){.quotes{grid-template-columns:1fr}}
+.book{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;margin-top:30px;align-items:start}
+@media(max-width:850px){.book{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px}
+fieldset{border:0;padding:0;margin:0 0 22px}
+legend{font-weight:700;font-size:15px;margin-bottom:10px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chip span{display:block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;font-size:15px}
+.chip input:checked+span{background:var(--plum);color:var(--on-plum);border-color:var(--plum)}
+.chip input:focus-visible+span{outline:3px solid var(--brass);outline-offset:2px}
+.chip input:disabled+span{opacity:.35;text-decoration:line-through}
+.sum h3{font-size:28px;margin-bottom:14px}
+.sum dl{margin:0 0 20px;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:15px}
+.sum dt{color:var(--muted)}.sum dd{margin:0;text-align:right}
+.total{border-top:1px solid var(--line);padding-top:14px;display:flex;justify-content:space-between;font:500 26px "Bodoni Moda",serif;margin-bottom:18px}
+.sum .btn{width:100%}
+.sum .btn:disabled{opacity:.4;cursor:not-allowed}
+.done{display:none;text-align:center;padding:8px 0}
+.done h3{font-size:32px;margin:8px 0}
+.tick{width:54px;height:54px;border-radius:50%;background:var(--brass);color:#fff;display:inline-grid;place-items:center;font-size:28px}
+footer{padding:48px 0 40px;border-top:1px solid var(--line)}
+footer .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;font-size:15px}
+footer h3{font-size:22px;margin-bottom:8px}
+footer p{margin:0;color:var(--muted)}
+.fine{grid-column:1/-1;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:18px}
+@media(max-width:700px){footer .wrap{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.arch{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#top">Aurelle</a>
+<nav><a href="#services">Services</a><a href="#team">Stylists</a><a href="#reviews">Reviews</a><a class="btn" href="#book">Book a visit</a></nav></div></header>
+
+<main id="top">
+<div class="wrap hero">
+<div>
+<h1>Hair that looks like you,<em>on a good day.</em></h1>
+<p>Cuts, colour and care in a calm, sunlit studio. Every visit starts with a real conversation and ends with hair you can style yourself.</p>
+<div class="row"><a class="btn" href="#book">Book a visit</a><a class="t" href="#services">See services and prices</a></div>
+</div>
+<div class="art" role="img" aria-label="Three overlapping arches in plum, brass and blush">
+<div class="arch a1"></div><div class="arch a2"></div><div class="arch a3"></div>
+<div class="badge"><b>4.9 rating</b>from 1,200+ clients</div>
+</div></div>
+
+<section id="services" class="wrap">
+<h2>Services and prices</h2>
+<p class="muted">Prices are starting points. Your stylist confirms the final price after your consultation.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="menu" id="menu" role="tabpanel"></div>
+</section>
+
+<section class="band" id="team"><div class="wrap">
+<h2>Your stylists</h2>
+<p class="muted">Three specialists, each booked by the hour so no one rushes you.</p>
+<div class="team">
+<div class="pro"><div class="pic" style="background:linear-gradient(160deg,#c98fa6,#5b2a52)">M</div><h3>Mira Das</h3><p>Precision cuts and curly hair. 11 years behind the chair.</p></div>
+<div class="pro"><div class="pic" style="background:linear-gradient(160deg,#c9953f,#7a3f5e)">J</div><h3>Joel Fernandes</h3><p>Colour specialist: balayage, gloss and gentle blonding.</p></div>
+<div class="pro"><div class="pic" style="background:linear-gradient(160deg,#7c9a8a,#34524a)">S</div><h3>Saanvi Rao</h3><p>Bridal styling, treatments and scalp care.</p></div>
+</div></div></section>
+
+<section id="reviews" class="wrap">
+<h2>What clients say</h2>
+<div class="quotes">
+<blockquote>“I walked in with a Pinterest board and walked out with a cut that actually suits my face.”<cite>Ananya K., cut and gloss</cite></blockquote>
+<blockquote>“The blonde is bright but my hair still feels strong. Joel explained every step.”<cite>Priya S., balayage</cite></blockquote>
+<blockquote>“Saanvi did my wedding hair and it lasted through the dancing. Booking again for the reception.”<cite>Neha M., bridal styling</cite></blockquote>
+</div></section>
+
+<section class="band" id="book"><div class="wrap">
+<h2>Book a visit</h2>
+<p class="muted">Pick a service, stylist and time. This is a demo, so nothing is actually booked.</p>
+<div class="book">
+<div class="panel" id="form" style="color:var(--ink)">
+<fieldset><legend>Service</legend><div class="chips" id="fs"></div></fieldset>
+<fieldset><legend>Stylist</legend><div class="chips" id="fp"></div></fieldset>
+<fieldset><legend>Day</legend><div class="chips" id="fd"></div></fieldset>
+<fieldset style="margin:0"><legend>Time</legend><div class="chips" id="ft"></div></fieldset>
+</div>
+<div class="panel sum" style="color:var(--ink)">
+<div id="sumbox"><h3>Your visit</h3>
+<dl><dt>Service</dt><dd id="s1">Not chosen</dd><dt>Stylist</dt><dd id="s2">Not chosen</dd><dt>When</dt><dd id="s3">Not chosen</dd><dt>Duration</dt><dd id="s4">-</dd></dl>
+<div class="total"><span>Estimate</span><span id="s5">₹0</span></div>
+<button class="btn" id="go" disabled>Confirm booking</button></div>
+<div class="done" id="done"><div class="tick">✓</div><h3>You’re booked</h3><p class="muted" id="dmsg"></p><button class="btn" id="again" style="margin-top:14px">Book another visit</button></div>
+</div></div></div></section>
+</main>
+
+<footer><div class="wrap">
+<div><h3>Aurelle Hair Studio</h3><p>14 Garden Lane, Demo Nagar<br>Maharashtra, India</p></div>
+<div><h3>Hours</h3><p>Tuesday to Saturday, 10 am to 8 pm<br>Sunday, 11 am to 6 pm<br>Closed Monday</p></div>
+<div><h3>Contact</h3><p>+91 98765 43210<br>hello@aurelle.example</p></div>
+<div class="fine">Demo website with sample content. Names, prices and reviews are fictional.</div>
+</div></footer>
+
+<script>
+var S=[
+{c:"Cut and style",i:[["Women’s cut and blow-dry",1800,60],["Men’s cut",900,40],["Fringe trim",300,15],["Kids’ cut",600,30]]},
+{c:"Colour",i:[["Root touch-up",2200,90],["Full colour",4200,120],["Balayage",7500,210],["Gloss toner",1800,45]]},
+{c:"Treatments",i:[["Deep repair mask",1500,45],["Keratin smoothing",8500,180],["Scalp detox",1800,45]]},
+{c:"Bridal",i:[["Bridal trial",3500,90],["Wedding day styling",9000,150]]}
+];
+var P=["Mira Das","Joel Fernandes","Saanvi Rao"];
+var T=["10:00 am","11:30 am","1:00 pm","3:00 pm","4:30 pm","6:00 pm"];
+var all=[];S.forEach(function(g){g.i.forEach(function(x){all.push(x)})});
+var $=function(id){return document.getElementById(id)};
+var st={s:null,p:null,d:null,t:null};
+function money(n){return "₹"+n.toLocaleString("en-IN")}
+/* services menu */
+var tabs=$("tabs"),menu=$("menu");
+function showTab(k){
+ Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute("aria-selected",j===k)});
+ menu.innerHTML="";
+ S[k].i.forEach(function(x){
+  var d=document.createElement("div");d.className="item";
+  d.innerHTML="<h3></h3><div class='p'></div><span></span>";
+  d.children[0].textContent=x[0];d.children[1].textContent="from "+money(x[1]);d.children[2].textContent=x[2]+" min";
+  menu.appendChild(d)});
+}
+S.forEach(function(g,k){var b=document.createElement("button");b.className="tab";b.setAttribute("role","tab");b.textContent=g.c;b.onclick=function(){showTab(k)};tabs.appendChild(b)});
+showTab(0);
+/* booking */
+function chips(box,name,list,labelFn){
+ box.innerHTML="";
+ list.forEach(function(v,k){
+  var l=document.createElement("label");l.className="chip";
+  l.innerHTML="<input type='radio' name='"+name+"'><span></span>";
+  l.children[1].textContent=labelFn(v);
+  l.children[0].onchange=function(){st[name]=k;update()};
+  box.appendChild(l)});
+}
+chips($("fs"),"s",all,function(x){return x[0]});
+chips($("fp"),"p",P,function(x){return x});
+var days=[];var now=new Date();
+for(var i=1;days.length<6;i++){var d=new Date(now.getFullYear(),now.getMonth(),now.getDate()+i);if(d.getDay()!==1)days.push(d)}
+chips($("fd"),"d",days,function(d){return d.toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"})});
+chips($("ft"),"t",T,function(x){return x});
+function update(){
+ var s=all[st.s],p=P[st.p],d=days[st.d],t=T[st.t];
+ $("s1").textContent=s?s[0]:"Not chosen";
+ $("s2").textContent=p||"Not chosen";
+ $("s3").textContent=(d&&t)?d.toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"})+", "+t:(d?d.toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"}):"Not chosen");
+ $("s4").textContent=s?s[2]+" min":"-";
+ $("s5").textContent=s?money(s[1]):"₹0";
+ $("go").disabled=!(s&&p&&d&&t);
+}
+$("go").onclick=function(){
+ var s=all[st.s];
+ $("dmsg").textContent=s[0]+" with "+P[st.p]+" on "+$("s3").textContent+". A confirmation would be sent to you.";
+ $("sumbox").style.display="none";$("done").style.display="block";
+ $("form").style.opacity=".45";$("form").style.pointerEvents="none";
+};
+$("again").onclick=function(){
+ st={s:null,p:null,d:null,t:null};
+ Array.prototype.forEach.call(document.querySelectorAll("#form input"),function(i){i.checked=false});
+ $("sumbox").style.display="block";$("done").style.display="none";
+ $("form").style.opacity="";$("form").style.pointerEvents="";update();
+};
+</script>
+</body>
+</html>
